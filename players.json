@@ -1,0 +1,202 @@
+[
+    {
+      "id": "PLAYER-001",
+      "name": "Lionel Messi",
+      "description": "Argentine footballer considered one of the greatest players of all time. Known for his dribbling, passing, and goal-scoring abilities.",
+      "age": 36,
+      "isActive": true,
+      "birthDate": "1987-06-24",
+      "imageUrl": "https://example.com/images/players/messi.jpg",
+      "position": "Forward",
+      "skills": ["Dribbling", "Passing", "Finishing"],
+      "nationality": "Argentina",
+      "currentTeam": {
+        "id": "TEAM-001",
+        "name": "Inter Miami CF",
+        "league": "Major League Soccer",
+        "teamLogoUrl": "https://example.com/images/teams/inter-miami-logo.jpg",
+        "foundedYear": 2018,
+        "stadium": "DRV PNK Stadium"
+      }
+    },
+    {
+      "id": "PLAYER-002",
+      "name": "Cristiano Ronaldo",
+      "description": "Portuguese forward known for his athleticism, goal-scoring, and leadership. One of the most decorated players in football history.",
+      "age": 38,
+      "isActive": true,
+      "birthDate": "1985-02-05",
+      "imageUrl": "https://example.com/images/players/ronaldo.jpg",
+      "position": "Forward",
+      "skills": ["Shooting", "Heading", "Speed"],
+      "nationality": "Portugal",
+      "currentTeam": {
+        "id": "TEAM-004",
+        "name": "Al Nassr",
+        "league": "Saudi Professional League",
+        "teamLogoUrl": "https://example.com/images/teams/al-nassr-logo.jpg",
+        "foundedYear": 1955,
+        "stadium": "Mrsool Park"
+      }
+    },
+    {
+      "id": "PLAYER-003",
+      "name": "Neymar Jr",
+      "description": "Brazilian forward known for his dribbling, creativity, and flair. A key player for both club and country.",
+      "age": 31,
+      "isActive": true,
+      "birthDate": "1992-02-05",
+      "imageUrl": "https://example.com/images/players/neymar.jpg",
+      "position": "Forward",
+      "skills": ["Dribbling", "Playmaking", "Free Kicks"],
+      "nationality": "Brazil",
+      "currentTeam": {
+        "id": "TEAM-005",
+        "name": "Al Hilal",
+        "league": "Saudi Professional League",
+        "teamLogoUrl": "https://example.com/images/teams/al-hilal-logo.jpg",
+        "foundedYear": 1957,
+        "stadium": "King Fahd International Stadium"
+      }
+    },
+    {
+      "id": "PLAYER-004",
+      "name": "Kylian Mbappé",
+      "description": "French forward known for his speed, technical skills, and goal-scoring ability. One of the brightest talents in modern football.",
+      "age": 24,
+      "isActive": true,
+      "birthDate": "1998-12-20",
+      "imageUrl": "https://example.com/images/players/mbappe.jpg",
+      "position": "Forward",
+      "skills": ["Speed", "Dribbling", "Finishing"],
+      "nationality": "France",
+      "currentTeam": {
+        "id": "TEAM-003",
+        "name": "Paris Saint-Germain",
+        "league": "Ligue 1",
+        "teamLogoUrl": "https://example.com/images/teams/psg-logo.jpg",
+        "foundedYear": 1970,
+        "stadium": "Parc des Princes"
+      }
+    },
+    {
+      "id": "PLAYER-005",
+      "name": "Virgil van Dijk",
+      "description": "Dutch defender known for his physical strength, leadership, and defensive skills. A key player for Liverpool and the Netherlands national team.",
+      "age": 32,
+      "isActive": true,
+      "birthDate": "1991-07-08",
+      "imageUrl": "https://example.com/images/players/vandijk.jpg",
+      "position": "Defender",
+      "skills": ["Tackling", "Heading", "Leadership"],
+      "nationality": "Netherlands",
+      "currentTeam": {
+        "id": "TEAM-002",
+        "name": "Liverpool FC",
+        "league": "Premier League",
+        "teamLogoUrl": "https://example.com/images/teams/liverpool-logo.jpg",
+        "foundedYear": 1892,
+        "stadium": "Anfield"
+      }
+    },
+    {
+      "id": "PLAYER-006",
+      "name": "Kevin De Bruyne",
+      "description": "Belgian midfielder known for his vision, passing, and playmaking abilities. One of the best midfielders in the world.",
+      "age": 32,
+      "isActive": true,
+      "birthDate": "1991-06-28",
+      "imageUrl": "https://example.com/images/players/debruyne.jpg",
+      "position": "Midfielder",
+      "skills": ["Passing", "Vision", "Long Shots"],
+      "nationality": "Belgium",
+      "currentTeam": {
+        "id": "TEAM-006",
+        "name": "Manchester City",
+        "league": "Premier League",
+        "teamLogoUrl": "https://example.com/images/teams/manchester-city-logo.jpg",
+        "foundedYear": 1880,
+        "stadium": "Etihad Stadium"
+      }
+    },
+    {
+      "id": "PLAYER-007",
+      "name": "Robert Lewandowski",
+      "description": "Polish striker known for his goal-scoring ability, positioning, and finishing. One of the most consistent forwards in football.",
+      "age": 35,
+      "isActive": true,
+      "birthDate": "1988-08-21",
+      "imageUrl": "https://example.com/images/players/lewandowski.jpg",
+      "position": "Forward",
+      "skills": ["Finishing", "Positioning", "Heading"],
+      "nationality": "Poland",
+      "currentTeam": {
+        "id": "TEAM-007",
+        "name": "FC Barcelona",
+        "league": "La Liga",
+        "teamLogoUrl": "https://example.com/images/teams/barcelona-logo.jpg",
+        "foundedYear": 1899,
+        "stadium": "Camp Nou"
+      }
+    },
+    {
+      "id": "PLAYER-008",
+      "name": "Mohamed Salah",
+      "description": "Egyptian forward known for his speed, dribbling, and goal-scoring. A key player for Liverpool and the Egyptian national team.",
+      "age": 31,
+      "isActive": true,
+      "birthDate": "1992-06-15",
+      "imageUrl": "https://example.com/images/players/salah.jpg",
+      "position": "Forward",
+      "skills": ["Speed", "Dribbling", "Finishing"],
+      "nationality": "Egypt",
+      "currentTeam": {
+        "id": "TEAM-002",
+        "name": "Liverpool FC",
+        "league": "Premier League",
+        "teamLogoUrl": "https://example.com/images/teams/liverpool-logo.jpg",
+        "foundedYear": 1892,
+        "stadium": "Anfield"
+      }
+    },
+    {
+      "id": "PLAYER-009",
+      "name": "Erling Haaland",
+      "description": "Norwegian striker known for his physical strength, speed, and goal-scoring ability. One of the most promising young talents in football.",
+      "age": 23,
+      "isActive": true,
+      "birthDate": "2000-07-21",
+      "imageUrl": "https://example.com/images/players/haaland.jpg",
+      "position": "Forward",
+      "skills": ["Finishing", "Strength", "Speed"],
+      "nationality": "Norway",
+      "currentTeam": {
+        "id": "TEAM-006",
+        "name": "Manchester City",
+        "league": "Premier League",
+        "teamLogoUrl": "https://example.com/images/teams/manchester-city-logo.jpg",
+        "foundedYear": 1880,
+        "stadium": "Etihad Stadium"
+      }
+    },
+    {
+      "id": "PLAYER-010",
+      "name": "Luka Modrić",
+      "description": "Croatian midfielder known for his technical skills, vision, and playmaking. A key player for Real Madrid and the Croatian national team.",
+      "age": 38,
+      "isActive": true,
+      "birthDate": "1985-09-09",
+      "imageUrl": "https://example.com/images/players/modric.jpg",
+      "position": "Midfielder",
+      "skills": ["Passing", "Vision", "Dribbling"],
+      "nationality": "Croatia",
+      "currentTeam": {
+        "id": "TEAM-008",
+        "name": "Real Madrid",
+        "league": "La Liga",
+        "teamLogoUrl": "https://example.com/images/teams/real-madrid-logo.jpg",
+        "foundedYear": 1902,
+        "stadium": "Santiago Bernabéu"
+      }
+    }
+  ]
