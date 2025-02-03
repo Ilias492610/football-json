@@ -1,0 +1,99 @@
+import { Player } from './interfaces/types';
+import * as readline from 'readline';
+
+class FootballDataViewer {
+    private players: Player[] = [];
+    private rl: readline.Interface;
+
+    constructor() {
+        this.rl = readline.createInterface({
+            input: process.stdin,
+            output: process.stdout
+        });
+        this.loadData();
+    }
+
+    private async loadData() {
+        try {
+            const response = await fetch('https://raw.githubusercontent.com/yourusername/football-api/main/data/players.json');
+            this.players = await response.json();
+        } catch (error) {
+            console.error('Error loading data:', error);
+        }
+    }
+
+    public async start() {
+        while (true) {
+            console.clear();
+            console.log('Welcome to the Football Data Viewer!\n');
+            console.log('1. View all players');
+            console.log('2. Filter by ID');
+            console.log('3. Exit\n');
+
+            const choice = await this.askQuestion('Please enter your choice: ');
+
+            switch (choice) {
+                case '1':
+                    this.viewAllPlayers();
+                    break;
+                case '2':
+                    await this.filterById();
+                    break;
+                case '3':
+                    this.rl.close();
+                    return;
+                default:
+                    console.log('Invalid choice. Please try again.');
+            }
+
+            await this.askQuestion('\nPress Enter to continue...');
+        }
+    }
+
+    private viewAllPlayers() {
+        this.players.forEach(player => {
+            console.log(`- ${player.name} (${player.id})`);
+        });
+    }
+
+    private async filterById() {
+        const id = await this.askQuestion('Please enter the ID you want to filter by: ');
+        const player = this.players.find(p => p.id === id);
+
+        if (!player) {
+            console.log('Player not found.');
+            return;
+        }
+
+        this.displayPlayerDetails(player);
+    }
+
+    private displayPlayerDetails(player: Player) {
+        console.log(`\n- ${player.name} (${player.id})`);
+        console.log(`  - Description: ${player.description}`);
+        console.log(`  - Age: ${player.age}`);
+        console.log(`  - Active: ${player.isActive}`);
+        console.log(`  - Birthdate: ${player.birthDate}`);
+        console.log(`  - Image: ${player.imageUrl}`);
+        console.log(`  - Position: ${player.position}`);
+        console.log(`  - Skills: ${player.skills.join(', ')}`);
+        console.log(`  - Nationality: ${player.nationality}`);
+        console.log(`  - Current Team:`);
+        console.log(`    - Name: ${player.currentTeam.name}`);
+        console.log(`    - League: ${player.currentTeam.league}`);
+        console.log(`    - Stadium: ${player.currentTeam.stadium}`);
+        console.log(`    - Founded: ${player.currentTeam.foundedYear}`);
+    }
+
+    private askQuestion(question: string): Promise<string> {
+        return new Promise((resolve) => {
+            this.rl.question(question, (answer) => {
+                resolve(answer);
+            });
+        });
+    }
+}
+
+// Start the application
+const app = new FootballDataViewer();
+app.start();
