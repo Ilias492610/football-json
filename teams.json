@@ -1,0 +1,82 @@
+[
+    {
+      "id": "TEAM-001",
+      "name": "Inter Miami CF",
+      "league": "Major League Soccer",
+      "teamLogoUrl": "https://example.com/images/teams/inter-miami-logo.jpg",
+      "foundedYear": 2018,
+      "stadium": "DRV PNK Stadium",
+      "manager": "Gerardo Martino",
+      "country": "United States"
+    },
+    {
+      "id": "TEAM-002",
+      "name": "Liverpool FC",
+      "league": "Premier League",
+      "teamLogoUrl": "https://example.com/images/teams/liverpool-logo.jpg",
+      "foundedYear": 1892,
+      "stadium": "Anfield",
+      "manager": "Jürgen Klopp",
+      "country": "England"
+    },
+    {
+      "id": "TEAM-003",
+      "name": "Paris Saint-Germain",
+      "league": "Ligue 1",
+      "teamLogoUrl": "https://example.com/images/teams/psg-logo.jpg",
+      "foundedYear": 1970,
+      "stadium": "Parc des Princes",
+      "manager": "Luis Enrique",
+      "country": "France"
+    },
+    {
+      "id": "TEAM-004",
+      "name": "Al Nassr",
+      "league": "Saudi Professional League",
+      "teamLogoUrl": "https://example.com/images/teams/al-nassr-logo.jpg",
+      "foundedYear": 1955,
+      "stadium": "Mrsool Park",
+      "manager": "Luís Castro",
+      "country": "Saudi Arabia"
+    },
+    {
+      "id": "TEAM-005",
+      "name": "Al Hilal",
+      "league": "Saudi Professional League",
+      "teamLogoUrl": "https://example.com/images/teams/al-hilal-logo.jpg",
+      "foundedYear": 1957,
+      "stadium": "King Fahd International Stadium",
+      "manager": "Jorge Jesus",
+      "country": "Saudi Arabia"
+    },
+    {
+      "id": "TEAM-006",
+      "name": "Manchester City",
+      "league": "Premier League",
+      "teamLogoUrl": "https://example.com/images/teams/manchester-city-logo.jpg",
+      "foundedYear": 1880,
+      "stadium": "Etihad Stadium",
+      "manager": "Pep Guardiola",
+      "country": "England"
+    },
+    {
+      "id": "TEAM-007",
+      "name": "FC Barcelona",
+      "league": "La Liga",
+      "teamLogoUrl": "https://example.com/images/teams/barcelona-logo.jpg",
+      "foundedYear": 1899,
+      "stadium": "Camp Nou",
+      "manager": "Xavi Hernández",
+      "country": "Spain"
+    },
+    {
+      "id": "TEAM-008",
+      "name": "Real Madrid",
+      "league": "La Liga",
+      "teamLogoUrl": "https://example.com/images/teams/real-madrid-logo.jpg",
+      "foundedYear": 1902,
+      "stadium": "Santiago Bernabéu",
+      "manager": "Carlo Ancelotti",
+      "country": "Spain"
+    }
+  ]
