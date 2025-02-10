@@ -6,7 +6,7 @@
       "age": 36,
       "isActive": true,
       "birthDate": "1987-06-24",
-      "imageUrl": "https://example.com/images/players/messi.jpg",
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/refs/heads/main/messi.webp",
       "position": "Forward",
       "skills": ["Dribbling", "Passing", "Finishing"],
       "nationality": "Argentina",
