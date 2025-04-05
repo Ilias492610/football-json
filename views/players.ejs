@@ -1,0 +1,77 @@
+<%- include('./partials/header', { title: 'Players' }) %>
+
+<div class="page-header">
+  <h1>Players</h1>
+</div>
+
+<div class="filter-section">
+  <form action="/players" method="GET" class="search-form">
+    <input 
+      type="text" 
+      name="search" 
+      placeholder="Search by name..." 
+      value="<%= searchQuery %>"
+      class="search-input"
+    >
+    <input type="hidden" name="sortField" value="<%= sortField %>">
+    <input type="hidden" name="sortOrder" value="<%= sortOrder %>">
+    <button type="submit" class="search-button">Search</button>
+  </form>
+</div>
+
+<div class="table-container">
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>
+          <a href="/players?sortField=name&sortOrder=<%= sortField === 'name' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>">
+            Name <%= sortField === 'name' ? (sortOrder === 'asc' ? '▲' : '▼') : '' %>
+          </a>
+        </th>
+        <th>
+          <a href="/players?sortField=nationality&sortOrder=<%= sortField === 'nationality' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>">
+            Nationality <%= sortField === 'nationality' ? (sortOrder === 'asc' ? '▲' : '▼') : '' %>
+          </a>
+        </th>
+        <th>
+          <a href="/players?sortField=position&sortOrder=<%= sortField === 'position' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>">
+            Position <%= sortField === 'position' ? (sortOrder === 'asc' ? '▲' : '▼') : '' %>
+          </a>
+        </th>
+        <th>
+          <a href="/players?sortField=age&sortOrder=<%= sortField === 'age' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>">
+            Age <%= sortField === 'age' ? (sortOrder === 'asc' ? '▲' : '▼') : '' %>
+          </a>
+        </th>
+        <th>
+          <a href="/players?sortField=currentTeam&sortOrder=<%= sortField === 'currentTeam' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>">
+            Team <%= sortField === 'currentTeam' ? (sortOrder === 'asc' ? '▲' : '▼') : '' %>
+          </a>
+        </th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (players.length === 0) { %>
+        <tr>
+          <td colspan="6" class="no-results">No players found</td>
+        </tr>
+      <% } else { %>
+        <% players.forEach(player => { %>
+          <tr>
+            <td><%= player.name %></td>
+            <td><%= player.nationality %></td>
+            <td><%= player.position %></td>
+            <td><%= player.age %></td>
+            <td><%= player.currentTeam.name %></td>
+            <td>
+              <a href="/players/<%= player.id %>" class="view-button">View</a>
+            </td>
+          </tr>
+        <% }) %>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('./partials/footer') %> 

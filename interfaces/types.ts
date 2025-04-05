@@ -2,6 +2,16 @@ export interface Team {
     id: string;
     name: string;
     league: string;
+    foundedYear: number;
+    stadium: string;
+    manager: string;
+    country: string;
+}
+
+export interface PlayerTeam {
+    id: string;
+    name: string;
+    league: string;
     teamLogoUrl: string;
     foundedYear: number;
     stadium: string;
@@ -18,5 +28,5 @@ export interface Player {
     position: string;
     skills: string[];
     nationality: string;
-    currentTeam: Team;
+    currentTeam: PlayerTeam;
 }

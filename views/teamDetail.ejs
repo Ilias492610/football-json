@@ -1,0 +1,71 @@
+<%- include('./partials/header', { title: team.name }) %>
+
+<div class="page-header">
+  <h1><%= team.name %></h1>
+  <a href="/teams" class="back-button">← Back to Teams</a>
+</div>
+
+<div class="detail-container">
+  <div class="team-detail-info">
+    <h2>Team Information</h2>
+    <div class="info-row">
+      <span class="info-label">League:</span>
+      <span class="info-value"><%= team.league %></span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Country:</span>
+      <span class="info-value"><%= team.country %></span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Founded:</span>
+      <span class="info-value"><%= team.foundedYear %></span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Stadium:</span>
+      <span class="info-value"><%= team.stadium %></span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Manager:</span>
+      <span class="info-value"><%= team.manager %></span>
+    </div>
+  </div>
+
+  <% if (players && players.length > 0) { %>
+    <div class="related-section">
+      <h2>Team Players</h2>
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Position</th>
+              <th>Nationality</th>
+              <th>Age</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% players.forEach(player => { %>
+              <tr>
+                <td><%= player.name %></td>
+                <td><%= player.position %></td>
+                <td><%= player.nationality %></td>
+                <td><%= player.age %></td>
+                <td>
+                  <a href="/players/<%= player.id %>" class="view-button">View</a>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% } else { %>
+    <div class="related-section">
+      <h2>Team Players</h2>
+      <p class="no-results">No players found for this team</p>
+    </div>
+  <% } %>
+</div>
+
+<%- include('./partials/footer') %> 

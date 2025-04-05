@@ -1,0 +1,86 @@
+<%- include('./partials/header', { title: player.name }) %>
+
+<div class="page-header">
+  <h1><%= player.name %></h1>
+  <a href="/players" class="back-button">← Back to Players</a>
+</div>
+
+<div class="detail-container">
+  <div class="detail-card">
+    <div class="detail-image">
+      <img src="<%= player.imageUrl %>" alt="<%= player.name %>" class="player-image">
+    </div>
+    <div class="detail-info">
+      <h2>Player Information</h2>
+      <div class="info-row">
+        <span class="info-label">Position:</span>
+        <span class="info-value"><%= player.position %></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Nationality:</span>
+        <span class="info-value"><%= player.nationality %></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Age:</span>
+        <span class="info-value"><%= player.age %></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Birth Date:</span>
+        <span class="info-value"><%= player.birthDate %></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Active:</span>
+        <span class="info-value"><%= player.isActive ? 'Yes' : 'No' %></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Skills:</span>
+        <span class="info-value"><%= player.skills.join(', ') %></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-description">
+    <h2>Description</h2>
+    <p><%= player.description %></p>
+  </div>
+
+  <div class="related-section">
+    <h2>Current Team</h2>
+    <div class="team-card">
+      <h3><%= player.currentTeam.name %></h3>
+      <div class="info-row">
+        <span class="info-label">League:</span>
+        <span class="info-value"><%= player.currentTeam.league %></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Stadium:</span>
+        <span class="info-value"><%= player.currentTeam.stadium %></span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Founded:</span>
+        <span class="info-value"><%= player.currentTeam.foundedYear %></span>
+      </div>
+      <a href="/teams/<%= player.currentTeam.id %>" class="view-button">View Team</a>
+    </div>
+  </div>
+
+  <% if (teammates && teammates.length > 0) { %>
+    <div class="related-section">
+      <h2>Teammates</h2>
+      <div class="teammates-list">
+        <% teammates.forEach(teammate => { %>
+          <div class="teammate-card">
+            <h3><%= teammate.name %></h3>
+            <div class="info-row">
+              <span class="info-label">Position:</span>
+              <span class="info-value"><%= teammate.position %></span>
+            </div>
+            <a href="/players/<%= teammate.id %>" class="view-button">View Player</a>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  <% } %>
+</div>
+
+<%- include('./partials/footer') %> 
