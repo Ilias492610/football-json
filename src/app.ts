@@ -4,7 +4,7 @@ import path from 'path';
 import session from 'express-session';
 import connectDB from './config/database';
 import { loadPlayers, loadTeams, updatePlayer, updateTeam } from './services/dataService';
-import { Player } from '../interfaces/types';
+import { Player } from './interfaces/types';
 import { Team } from './interfaces/types';
 import { UserRole } from './models/User';
 import { User } from './models/User';
@@ -96,11 +96,27 @@ app.set('views', viewsPath);
 
 // Routes
 // Home route - redirect to players or login based on authentication status
-app.get('/', (req, res) => {
-    if (req.session.isAuthenticated) {
-        res.redirect('/players');
-    } else {
-        res.redirect('/login');
+app.get('/', isAuthenticated, async (req, res) => {
+    try {
+        // Load both players and teams for the homepage
+        const players = await loadPlayers();
+        const teams = await loadTeams();
+        
+        // Get top 5 players and teams
+        const topPlayers = players.slice(0, 5);
+        const topTeams = teams.slice(0, 5);
+        
+        res.render('index', { 
+            players: topPlayers, 
+            teams: topTeams,
+            isAuthenticated: req.session.isAuthenticated,
+            username: req.session.username,
+            role: req.session.role,
+            activePage: 'home'
+        });
+    } catch (error) {
+        console.error('Error loading homepage data:', error);
+        res.status(500).render('error', { message: 'Failed to load homepage data' });
     }
 });
 

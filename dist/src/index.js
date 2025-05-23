@@ -33,25 +33,61 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-const fs = __importStar(require("fs"));
 const readline = __importStar(require("readline"));
-// Create readline interface for user input
+// Hardcoded spelers data omdat ik niet wist hoe ik het moest inladen
+const players = [
+    {
+        id: "PLAYER-001",
+        name: "Lionel Messi",
+        description: "Argentine footballer considered one of the greatest players of all time.",
+        age: 36,
+        isActive: true,
+        birthDate: "1987-06-24",
+        imageUrl: "/messi.webp",
+        position: "Forward",
+        skills: ["Dribbling", "Passing", "Finishing"],
+        nationality: "Argentina",
+        currentTeam: {
+            id: "TEAM-001",
+            name: "Inter Miami CF",
+            league: "Major League Soccer",
+            teamLogoUrl: "https://example.com/images/teams/inter-miami-logo.jpg",
+            foundedYear: 2018,
+            stadium: "DRV PNK Stadium"
+        }
+    },
+    {
+        id: "PLAYER-002",
+        name: "Cristiano Ronaldo",
+        description: "Portuguese forward known for his goalscoring and athleticism.",
+        age: 38,
+        isActive: true,
+        birthDate: "1985-02-05",
+        imageUrl: "/ronaldo.webp",
+        position: "Forward",
+        skills: ["Finishing", "Heading", "Speed"],
+        nationality: "Portugal",
+        currentTeam: {
+            id: "TEAM-003",
+            name: "Al-Nassr FC",
+            league: "Saudi Pro League",
+            teamLogoUrl: "https://example.com/images/teams/al-nassr-logo.jpg",
+            foundedYear: 1955,
+            stadium: "Al-Awwal Park"
+        }
+    }
+];
+// Maak readline interface voor user input
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
-// Function to load player data from JSON file
+// Functie om alle spelers te laden
 function loadPlayers() {
-    try {
-        const data = fs.readFileSync('./players.json', 'utf8');
-        return JSON.parse(data);
-    }
-    catch (error) {
-        console.error('Error loading players data:', error);
-        return [];
-    }
+    // Normaal zou ik hier een bestand inlezen maar ik gebruik nu gewoon de array hierboven
+    return players;
 }
-// Main menu function
+// Hoofdmenu functie
 function showMainMenu() {
     console.clear();
     console.log('Welcome to the Football Data Viewer!\n');
@@ -60,7 +96,7 @@ function showMainMenu() {
     console.log('3. Exit\n');
     rl.question('Please enter your choice: ', handleMenuChoice);
 }
-// Handle user's menu choice
+// Verwerk de menu keuze van de gebruiker
 function handleMenuChoice(choice) {
     switch (choice) {
         case '1':
@@ -78,21 +114,21 @@ function handleMenuChoice(choice) {
             waitForEnter();
     }
 }
-// Display all players
+// Toon alle spelers
 function viewAllPlayers() {
     console.clear();
     console.log('All Players:\n');
     const players = loadPlayers();
-    players.forEach(player => {
+    players.forEach((player) => {
         console.log(`- ${player.name} (${player.id})`);
     });
     waitForEnter();
 }
-// Ask user for player ID
+// Vraag de gebruiker om een speler ID
 function askForPlayerId() {
     rl.question('Please enter the ID you want to filter by: ', (id) => {
         const players = loadPlayers();
-        const player = players.find(p => p.id === id);
+        const player = players.find((p) => p.id === id);
         if (!player) {
             console.log('\nNo player found with that ID.');
             waitForEnter();
@@ -101,7 +137,7 @@ function askForPlayerId() {
         displayPlayerDetails(player);
     });
 }
-// Display player details
+// Toon speler details
 function displayPlayerDetails(player) {
     console.clear();
     console.log(`- ${player.name} (${player.id})`);
@@ -118,10 +154,10 @@ function displayPlayerDetails(player) {
     console.log(`    - League: ${player.currentTeam.league}`);
     waitForEnter();
 }
-// Wait for user to press Enter before continuing
+// Wacht tot de gebruiker op Enter drukt om door te gaan
 function waitForEnter() {
     rl.question('\nPress Enter to continue...', showMainMenu);
 }
-// Start the app
+// Start de app
 console.log('Loading football data...');
 showMainMenu();

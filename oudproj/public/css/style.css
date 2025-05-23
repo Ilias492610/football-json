@@ -1,0 +1,246 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+/* Header and Footer Styles */
+header, footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+header a, footer a {
+  color: #fff;
+}
+
+/* Form Container */
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  margin: 30px auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+}
+
+.form-container h1 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-input, .form-textarea, .form-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.form-input, .form-textarea {
+  font-size: 16px;
+}
+
+.form-textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+.form-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+}
+
+/* Video Table Styles */
+.video-table-container {
+  background-color: #fff;
+  padding: 20px;
+  margin: 30px auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+}
+
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFEF6;
+  padding: 20px;
+  margin: 30px auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+}
+
+.video-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.video-table th, .video-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.video-table th {
+  background-color: #f4f4f4;
+  cursor: pointer;
+}
+
+.video-table th a {
+  color: #333;
+}
+
+.video-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.create-video-link {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.btn-create {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-create:hover {
+  background-color: #218838;
+}
+
+/* Login Form Styles */
+.login-container {
+  background-color: #fff;
+  padding: 20px;
+  margin: 30px auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  text-align: center;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #f5c6cb;
+  border-radius: 3px;
+}
+
+.login-container form {
+  margin-top: 20px;
+}
+
+.login-container .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.login-container .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.login-container .form-group input {
+  width: 94%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.login-container button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.login-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Styling the navigation bar */
+#main-nav {
+  background-color: #333; /* Background color for the nav */
+  padding: 10px; /* Padding around the nav */
+}
+
+/* Styling the unordered list */
+.nav-list {
+  list-style-type: none; /* Remove bullet points */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  display: flex; /* Display list items in a row */
+  align-items: center; /* Center items vertically */
+}
+
+/* Styling each list item */
+.nav-item {
+  margin-right: 20px; /* Space between each list item */
+}
+
+/* Specific styling for logout item */
+.logout-item {
+  margin-left: auto; /* Push the logout item to the far right */
+  margin-right: 0; /* Reset right margin */
+}
+
+/* Styling the links */
+.nav-link {
+  color: white; /* Link text color */
+  text-decoration: none; /* Remove underline from links */
+  padding: 5px 10px; /* Padding around the link */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.nav-link:hover {
+  background-color: #555; /* Background color on hover */
+}

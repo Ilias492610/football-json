@@ -88,14 +88,28 @@ app.set('view engine', 'ejs');
 app.set('views', viewsPath);
 // Routes
 // Home route - redirect to players or login based on authentication status
-app.get('/', (req, res) => {
-    if (req.session.isAuthenticated) {
-        res.redirect('/players');
+app.get('/', isAuthenticated, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        // Load both players and teams for the homepage
+        const players = yield (0, dataService_1.loadPlayers)();
+        const teams = yield (0, dataService_1.loadTeams)();
+        // Get top 5 players and teams
+        const topPlayers = players.slice(0, 5);
+        const topTeams = teams.slice(0, 5);
+        res.render('index', {
+            players: topPlayers,
+            teams: topTeams,
+            isAuthenticated: req.session.isAuthenticated,
+            username: req.session.username,
+            role: req.session.role,
+            activePage: 'home'
+        });
     }
-    else {
-        res.redirect('/login');
+    catch (error) {
+        console.error('Error loading homepage data:', error);
+        res.status(500).render('error', { message: 'Failed to load homepage data' });
     }
-});
+}));
 // Login routes
 app.get('/login', (req, res) => {
     if (req.session.isAuthenticated) {
