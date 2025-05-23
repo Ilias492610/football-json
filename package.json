@@ -2,11 +2,14 @@
     "name": "football-json",
     "version": "1.0.0",
     "description": "Football data viewer web application",
-    "main": "index.ts",
+    "main": "dist/index.js",
+    "engines": {
+        "node": ">=14.0.0"
+    },
     "scripts": {
         "test": "jest",
-        "start": "ts-node index.ts",
-        "start:prod": "node dist/index.js",
+        "start": "node dist/index.js",
+        "start:dev": "ts-node index.ts",
         "dev": "ts-node-dev --respawn index.ts",
         "console": "ts-node consoleApp.ts",
         "build": "tsc"
