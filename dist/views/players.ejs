@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Players</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    
+    <main class="container py-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="h2 mb-0">Football Players</h1>
+            <form action="/players" method="GET" class="d-flex">
+                <div class="input-group">
+                    <input
+                        type="text"
+                        name="search"
+                        placeholder="Search by name..."
+                        value="<%= searchQuery %>"
+                        class="form-control"
+                        aria-label="Search players"
+                    >
+                    <input type="hidden" name="sortField" value="<%= sortField %>">
+                    <input type="hidden" name="sortOrder" value="<%= sortOrder %>">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-search me-1"></i> Search
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="card shadow-sm border-0">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">
+                                <a href="/players?sortField=name&sortOrder=<%= sortField === 'name' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>" class="text-decoration-none text-dark d-flex align-items-center">
+                                    Name 
+                                    <% if (sortField === 'name') { %>
+                                        <i class="bi bi-arrow-<%= sortOrder === 'asc' ? 'up' : 'down' %> ms-1 text-primary"></i>
+                                    <% } %>
+                                </a>
+                            </th>
+                            <th scope="col">
+                                <a href="/players?sortField=position&sortOrder=<%= sortField === 'position' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>" class="text-decoration-none text-dark d-flex align-items-center">
+                                    Position
+                                    <% if (sortField === 'position') { %>
+                                        <i class="bi bi-arrow-<%= sortOrder === 'asc' ? 'up' : 'down' %> ms-1 text-primary"></i>
+                                    <% } %>
+                                </a>
+                            </th>
+                            <th scope="col">
+                                <a href="/players?sortField=currentTeam&sortOrder=<%= sortField === 'currentTeam' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>" class="text-decoration-none text-dark d-flex align-items-center">
+                                    Team
+                                    <% if (sortField === 'currentTeam') { %>
+                                        <i class="bi bi-arrow-<%= sortOrder === 'asc' ? 'up' : 'down' %> ms-1 text-primary"></i>
+                                    <% } %>
+                                </a>
+                            </th>
+                            <th scope="col">
+                                <a href="/players?sortField=nationality&sortOrder=<%= sortField === 'nationality' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>" class="text-decoration-none text-dark d-flex align-items-center">
+                                    Nationality
+                                    <% if (sortField === 'nationality') { %>
+                                        <i class="bi bi-arrow-<%= sortOrder === 'asc' ? 'up' : 'down' %> ms-1 text-primary"></i>
+                                    <% } %>
+                                </a>
+                            </th>
+                            <th scope="col">
+                                <a href="/players?sortField=age&sortOrder=<%= sortField === 'age' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>" class="text-decoration-none text-dark d-flex align-items-center">
+                                    Age
+                                    <% if (sortField === 'age') { %>
+                                        <i class="bi bi-arrow-<%= sortOrder === 'asc' ? 'up' : 'down' %> ms-1 text-primary"></i>
+                                    <% } %>
+                                </a>
+                            </th>
+                            <th scope="col" class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (players.length === 0) { %>
+                            <tr>
+                                <td colspan="6" class="text-center py-4 text-muted">
+                                    <i class="bi bi-emoji-frown fs-4 d-block mb-2"></i>
+                                    No players found matching your search criteria
+                                </td>
+                            </tr>
+                        <% } else { %>
+                            <% players.forEach(player => { %>
+                                <tr>
+                                    <td class="align-middle"><%= player.name %></td>
+                                    <td class="align-middle">
+                                        <% let positionColor = 'secondary'; %>
+                                        <% if (player.position === 'Forward') positionColor = 'danger'; %>
+                                        <% if (player.position === 'Midfielder') positionColor = 'success'; %>
+                                        <% if (player.position === 'Defender') positionColor = 'primary'; %>
+                                        <% if (player.position === 'Goalkeeper') positionColor = 'warning'; %>
+                                        <span class="badge bg-<%= positionColor %>"><%= player.position %></span>
+                                    </td>
+                                    <td class="align-middle">
+                                        <a href="/team/<%= player.currentTeam.id %>" class="text-decoration-none">
+                                            <%= player.currentTeam.name %>
+                                        </a>
+                                    </td>
+                                    <td class="align-middle">
+                                        <% 
+                                        // Create a consistent color based on the nationality string
+                                        let nationalityColors = {
+                                            'England': 'primary',
+                                            'Spain': 'danger',
+                                            'France': 'info',
+                                            'Germany': 'warning',
+                                            'Italy': 'success',
+                                            'Portugal': 'secondary',
+                                            'Brazil': 'success',
+                                            'Argentina': 'info',
+                                            'Belgium': 'danger',
+                                            'Netherlands': 'warning'
+                                        };
+                                        let colorClass = nationalityColors[player.nationality] || 'dark';
+                                        %>
+                                        <span class="badge bg-<%= colorClass %>"><%= player.nationality %></span>
+                                    </td>
+                                    <td class="align-middle"><%= player.age %></td>
+                                    <td class="text-center">
+                                        <a href="/player/<%= player.id %>" class="btn btn-sm btn-primary">
+                                            <i class="bi bi-eye me-1"></i> View
+                                        </a>
+                                    </td>
+                                </tr>
+                            <% }); %>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="d-flex justify-content-between align-items-center mt-4">
+            <p class="text-muted mb-0">Showing <%= players.length %> players</p>
+            <a href="/" class="btn btn-outline-secondary">
+                <i class="bi bi-house me-1"></i> Back to Home
+            </a>
+        </div>
+    </main>
+    
+    <%- include('partials/footer') %>
+</body>
+</html>

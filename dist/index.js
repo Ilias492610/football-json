@@ -60,8 +60,26 @@ app.set("view engine", "ejs");
 app.use(express_1.default.json());
 app.use(session_1.default);
 app.use(express_1.default.urlencoded({ extended: true }));
-app.use(express_1.default.static(path_1.default.join(__dirname, "public")));
-app.set("views", path_1.default.join(__dirname, "views"));
+// Bepaal de juiste paden voor static en views mappen, afhankelijk van de omgeving
+const isProduction = process.env.NODE_ENV === 'production';
+let publicPath, viewsPath;
+if (isProduction) {
+    // In productie (gecompileerde code), gebruik relatieve paden vanaf dist map
+    publicPath = path_1.default.join(__dirname, "public");
+    viewsPath = path_1.default.join(__dirname, "views");
+    // Als we in dist/src/app.js draaien (Render), pas de paden aan
+    if (__dirname.includes('dist/src')) {
+        publicPath = path_1.default.join(__dirname, "../../public");
+        viewsPath = path_1.default.join(__dirname, "../../views");
+    }
+}
+else {
+    // In development, gebruik de standaard paden
+    publicPath = path_1.default.join(__dirname, "public");
+    viewsPath = path_1.default.join(__dirname, "views");
+}
+app.use(express_1.default.static(publicPath));
+app.set("views", viewsPath);
 app.set("port", (_a = process.env.PORT) !== null && _a !== void 0 ? _a : 3000);
 app.use((req, res, next) => {
     var _a, _b, _c;

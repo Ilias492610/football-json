@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= player.name %> - Football Cards</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/sidebar.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    
+    <main class="container py-4">
+        <div class="mb-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/players" class="text-decoration-none">Players</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><%= player.name %></li>
+                </ol>
+            </nav>
+        </div>
+        
+        <div class="card shadow-sm border-0 overflow-hidden">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <div class="position-relative h-100">
+                        <img src="/images/players<%= player.imageUrl %>" class="img-fluid h-100 w-100 object-fit-cover" alt="<%= player.name %>" onerror="this.src='/images/default-player.jpg'" style="object-fit: cover;">
+                        <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);">
+                            <span class="badge bg-primary mb-2"><%= player.position %></span>
+                            <h3 class="text-white mb-0"><%= player.name %></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2 class="card-title h3">Player Information</h2>
+                            <% if (locals.isAuthenticated && locals.role === 'ADMIN') { %>
+                                <a href="/player/<%= player.id %>/edit" class="btn btn-warning">
+                                    <i class="bi bi-pencil-square me-1"></i> Edit Player
+                                </a>
+                            <% } %>
+                        </div>
+                        
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100 border-0 bg-light">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-3">Basic Info</h5>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item bg-transparent px-0">
+                                                <div class="d-flex justify-content-between">
+                                                    <strong>Age:</strong>
+                                                    <span><%= player.age %></span>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item bg-transparent px-0">
+                                                <div class="d-flex justify-content-between">
+                                                    <strong>Nationality:</strong>
+                                                    <span><%= player.nationality %></span>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item bg-transparent px-0">
+                                                <div class="d-flex justify-content-between">
+                                                    <strong>Birth Date:</strong>
+                                                    <span><%= player.birthDate %></span>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item bg-transparent px-0">
+                                                <div class="d-flex justify-content-between">
+                                                    <strong>Active:</strong>
+                                                    <span class="badge bg-<%= player.isActive ? 'success' : 'danger' %>">
+                                                        <%= player.isActive ? 'Yes' : 'No' %>
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100 border-0 bg-light">
+                                    <div class="card-body">
+                                        <h5 class="card-title mb-3">Team Information</h5>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="me-3">
+                                                <img src="/images/teams<%= player.currentTeam.teamLogoUrl || '/default-team.jpg' %>" class="rounded-circle" width="50" height="50" alt="<%= player.currentTeam.name %>" onerror="this.src='/images/default-team.jpg'">
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0">
+                                                    <a href="/team/<%= player.currentTeam.id %>" class="text-decoration-none">
+                                                        <%= player.currentTeam.name %>
+                                                    </a>
+                                                </h6>
+                                                <small class="text-muted"><%= player.currentTeam.league %></small>
+                                            </div>
+                                        </div>
+                                        
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item bg-transparent px-0">
+                                                <div class="d-flex justify-content-between">
+                                                    <strong>Stadium:</strong>
+                                                    <span><%= player.currentTeam.stadium %></span>
+                                                </div>
+                                            </li>
+                                            <li class="list-group-item bg-transparent px-0">
+                                                <div class="d-flex justify-content-between">
+                                                    <strong>Founded:</strong>
+                                                    <span><%= player.currentTeam.foundedYear %></span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card border-0 bg-light mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3">Skills & Description</h5>
+                                
+                                <div class="mb-3">
+                                    <% player.skills.forEach(skill => { %>
+                                        <span class="badge bg-info text-dark me-1 mb-1"><%= skill %></span>
+                                    <% }); %>
+                                </div>
+                                
+                                <p class="card-text"><%= player.description %></p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex justify-content-between">
+                            <a href="/players" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left me-1"></i> Back to Players
+                            </a>
+                            
+                            <a href="/team/<%= player.currentTeam.id %>" class="btn btn-primary">
+                                <i class="bi bi-people-fill me-1"></i> View Team
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <%- include('partials/footer') %>
+</body>
+</html> 

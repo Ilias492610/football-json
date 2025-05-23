@@ -1,0 +1,27 @@
+/* Sidebar layout styles */
+body {
+    padding-left: 280px;
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    body {
+        padding-left: 0;
+        padding-top: 56px; /* Height of the mobile navbar */
+    }
+    
+    .sidebar {
+        display: none;
+    }
+}
+
+/* Sidebar active link styling */
+.nav-pills .nav-link.active {
+    background-color: #0d6efd;
+}
+
+/* Adjust main content area */
+.main-content {
+    width: 100%;
+    min-height: 100vh;
+}
