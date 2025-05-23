@@ -5,7 +5,7 @@ dotenv.config();
 
 const connectDB = async () => {
     try {
-        const mongoURI = 'mongodb+srv://hamdaouiilias14:N7ymXJvMs0fzDvyA@webontwikkeling.abgrzzs.mongodb.net/?retryWrites=true&w=majority&appName=Webontwikkeling';
+        const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://hamdaouiilias14:N7ymXJvMs0fzDvyA@webontwikkeling.abgrzzs.mongodb.net/?retryWrites=true&w=majority&appName=Webontwikkeling';
         console.log('Connecting to MongoDB...');
         console.log('MongoDB URI:', mongoURI);
         

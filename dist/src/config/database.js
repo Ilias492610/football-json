@@ -17,7 +17,7 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const mongoURI = 'mongodb+srv://hamdaouiilias14:N7ymXJvMs0fzDvyA@webontwikkeling.abgrzzs.mongodb.net/?retryWrites=true&w=majority&appName=Webontwikkeling';
+        const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://hamdaouiilias14:N7ymXJvMs0fzDvyA@webontwikkeling.abgrzzs.mongodb.net/?retryWrites=true&w=majority&appName=Webontwikkeling';
         console.log('Connecting to MongoDB...');
         console.log('MongoDB URI:', mongoURI);
         const conn = yield mongoose_1.default.connect(mongoURI);

@@ -84,3 +84,7 @@ npm run dev
 - **Express.js**: Web framework for Node.js
 - **EJS**: Templating engine
 - **CSS**: For styling the application 
+
+## Deployed Application
+
+The application is deployed and accessible at: https://football-json.onrender.com
