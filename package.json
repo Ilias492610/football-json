@@ -12,7 +12,7 @@
         "start:dev": "ts-node index.ts",
         "dev": "ts-node-dev --respawn index.ts",
         "console": "ts-node consoleApp.ts",
-        "build": "tsc && mkdir -p dist/src && echo \"require('../index.js');\" > dist/src/app.js"
+        "build": "tsc && mkdir -p dist/src && echo \"require('../index.js');\" > dist/src/app.js && mkdir -p dist/views dist/public && cp -R views/* dist/views/ && cp -R public/* dist/public/"
     },
     "dependencies": {
         "@types/cookie-parser": "^1.4.8",
