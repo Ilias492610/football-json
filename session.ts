@@ -2,6 +2,7 @@ import { URI } from "./database";
 import session from "express-session";
 import { UserRole } from "./types";
 import mongoDbSession from "connect-mongodb-session";
+
 const MongoDBStore = mongoDbSession(session);
 
 const mongoStore = new MongoDBStore({
@@ -27,7 +28,10 @@ export default session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
-        secure: process.env.NODE_ENV === 'production'
-    }
+        maxAge: 1000 * 60 * 60 * 24 * 7,
+        secure: false,
+        httpOnly: true,
+        sameSite: 'lax'
+    },
+    proxy: true
 });

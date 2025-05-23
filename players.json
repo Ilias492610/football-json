@@ -6,7 +6,7 @@
       "age": 36,
       "isActive": true,
       "birthDate": "1987-06-24",
-      "imageUrl": "/messi.webp",
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/players/messi.webp",
       "position": "Forward",
       "skills": ["Dribbling", "Passing", "Finishing"],
       "nationality": "Argentina",
@@ -14,7 +14,7 @@
         "id": "TEAM-001",
         "name": "Inter Miami CF",
         "league": "Major League Soccer",
-        "teamLogoUrl": "https://example.com/images/teams/inter-miami-logo.jpg",
+        "teamLogoUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/teams/Inter_Miami_CF_logo.svg.png",
         "foundedYear": 2018,
         "stadium": "DRV PNK Stadium"
       }
@@ -26,7 +26,7 @@
       "age": 38,
       "isActive": true,
       "birthDate": "1985-02-05",
-      "imageUrl": "/ronaldo.webp",
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/players/ronaldo.webp",
       "position": "Forward",
       "skills": ["Shooting", "Heading", "Speed"],
       "nationality": "Portugal",
@@ -34,7 +34,7 @@
         "id": "TEAM-004",
         "name": "Al Nassr",
         "league": "Saudi Professional League",
-        "teamLogoUrl": "https://example.com/images/teams/al-nassr-logo.jpg",
+        "teamLogoUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/teams/Nassr_FC_Logo.svg.png",
         "foundedYear": 1955,
         "stadium": "Mrsool Park"
       }
@@ -46,7 +46,7 @@
       "age": 31,
       "isActive": true,
       "birthDate": "1992-02-05",
-      "imageUrl": "/neymar.webp",
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/players/neymar.webp",
       "position": "Forward",
       "skills": ["Dribbling", "Playmaking", "Free Kicks"],
       "nationality": "Brazil",
@@ -54,7 +54,7 @@
         "id": "TEAM-005",
         "name": "Al Hilal",
         "league": "Saudi Professional League",
-        "teamLogoUrl": "https://example.com/images/teams/al-hilal-logo.jpg",
+        "teamLogoUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/teams/Al_Hilal_SFC_Logo.svg.png",
         "foundedYear": 1957,
         "stadium": "King Fahd International Stadium"
       }
@@ -66,7 +66,7 @@
       "age": 24,
       "isActive": true,
       "birthDate": "1998-12-20",
-      "imageUrl": "/mbappe.webp",
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/players/mbappe.webp",
       "position": "Forward",
       "skills": ["Speed", "Dribbling", "Finishing"],
       "nationality": "France",
@@ -74,7 +74,7 @@
         "id": "TEAM-003",
         "name": "Paris Saint-Germain",
         "league": "Ligue 1",
-        "teamLogoUrl": "https://example.com/images/teams/psg-logo.jpg",
+        "teamLogoUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/teams/Paris_Saint-Germain_F.C..svg.png",
         "foundedYear": 1970,
         "stadium": "Parc des Princes"
       }
@@ -86,7 +86,7 @@
       "age": 32,
       "isActive": true,
       "birthDate": "1991-07-08",
-      "imageUrl": "/van dijk.png",
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/players/van dijk.png",
       "position": "Defender",
       "skills": ["Tackling", "Heading", "Leadership"],
       "nationality": "Netherlands",
@@ -94,7 +94,7 @@
         "id": "TEAM-002",
         "name": "Liverpool FC",
         "league": "Premier League",
-        "teamLogoUrl": "https://example.com/images/teams/liverpool-logo.jpg",
+        "teamLogoUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/teams/Liverpool_FC.svg.webp",
         "foundedYear": 1892,
         "stadium": "Anfield"
       }
@@ -106,7 +106,7 @@
       "age": 32,
       "isActive": true,
       "birthDate": "1991-06-28",
-      "imageUrl": "/debruyne.jpeg",
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/players/debruyne.jpeg",
       "position": "Midfielder",
       "skills": ["Passing", "Vision", "Long Shots"],
       "nationality": "Belgium",
@@ -114,7 +114,7 @@
         "id": "TEAM-006",
         "name": "Manchester City",
         "league": "Premier League",
-        "teamLogoUrl": "https://example.com/images/teams/manchester-city-logo.jpg",
+        "teamLogoUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/teams/Manchester_City_FC_badge.svg.png",
         "foundedYear": 1880,
         "stadium": "Etihad Stadium"
       }
@@ -126,7 +126,7 @@
       "age": 35,
       "isActive": true,
       "birthDate": "1988-08-21",
-      "imageUrl": "/lewa.jpeg",
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/players/lewa.jpeg",
       "position": "Forward",
       "skills": ["Finishing", "Positioning", "Heading"],
       "nationality": "Poland",
@@ -134,7 +134,7 @@
         "id": "TEAM-007",
         "name": "FC Barcelona",
         "league": "La Liga",
-        "teamLogoUrl": "https://example.com/images/teams/barcelona-logo.jpg",
+        "teamLogoUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/teams/FC_Barcelona_(crest).svg.webp",
         "foundedYear": 1899,
         "stadium": "Camp Nou"
       }
@@ -146,7 +146,7 @@
       "age": 31,
       "isActive": true,
       "birthDate": "1992-06-15",
-      "imageUrl": "/salah.jpeg",
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/players/salah.jpeg",
       "position": "Forward",
       "skills": ["Speed", "Dribbling", "Finishing"],
       "nationality": "Egypt",
@@ -154,7 +154,7 @@
         "id": "TEAM-002",
         "name": "Liverpool FC",
         "league": "Premier League",
-        "teamLogoUrl": "https://example.com/images/teams/liverpool-logo.jpg",
+        "teamLogoUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/teams/Liverpool_FC.svg.webp",
         "foundedYear": 1892,
         "stadium": "Anfield"
       }
@@ -166,7 +166,7 @@
       "age": 23,
       "isActive": true,
       "birthDate": "2000-07-21",
-      "imageUrl": "/haland.jpeg",
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/players/haland.jpeg",
       "position": "Forward",
       "skills": ["Finishing", "Strength", "Speed"],
       "nationality": "Norway",
@@ -174,7 +174,7 @@
         "id": "TEAM-006",
         "name": "Manchester City",
         "league": "Premier League",
-        "teamLogoUrl": "https://example.com/images/teams/manchester-city-logo.jpg",
+        "teamLogoUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/teams/Manchester_City_FC_badge.svg.png",
         "foundedYear": 1880,
         "stadium": "Etihad Stadium"
       }
@@ -186,7 +186,7 @@
       "age": 38,
       "isActive": true,
       "birthDate": "1985-09-09",
-      "imageUrl": "/mordic.jpeg",
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/players/mordic.jpeg",
       "position": "Midfielder",
       "skills": ["Passing", "Vision", "Dribbling"],
       "nationality": "Croatia",
@@ -194,7 +194,7 @@
         "id": "TEAM-008",
         "name": "Real Madrid",
         "league": "La Liga",
-        "teamLogoUrl": "https://example.com/images/teams/real-madrid-logo.jpg",
+        "teamLogoUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/teams/Real_Madrid_CF.svg.webp",
         "foundedYear": 1902,
         "stadium": "Santiago Bernabéu"
       }

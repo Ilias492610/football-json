@@ -7,7 +7,7 @@
       "stadium": "DRV PNK Stadium",
       "manager": "Gerardo Martino",
       "country": "United States",
-      "imageUrl": "Inter_Miami_CF_logo.svg.png"
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/teams/Inter_Miami_CF_logo.svg.png"
     },
     {
       "id": "TEAM-002",
@@ -17,7 +17,7 @@
       "stadium": "Anfield",
       "manager": "Jürgen Klopp",
       "country": "England",
-      "imageUrl": "Liverpool_FC.svg.webp"
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/teams/Liverpool_FC.svg.webp"
     },
     {
       "id": "TEAM-003",
@@ -27,7 +27,7 @@
       "stadium": "Parc des Princes",
       "manager": "Luis Enrique",
       "country": "France",
-      "imageUrl": "Paris_Saint-Germain_F.C..svg.png"
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/teams/Paris_Saint-Germain_F.C..svg.png"
     },
     {
       "id": "TEAM-004",
@@ -37,7 +37,7 @@
       "stadium": "Mrsool Park",
       "manager": "Luís Castro",
       "country": "Saudi Arabia",
-      "imageUrl": "Nassr_FC_Logo.svg.png"
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/teams/Nassr_FC_Logo.svg.png"
     },
     {
       "id": "TEAM-005",
@@ -47,7 +47,7 @@
       "stadium": "King Fahd International Stadium",
       "manager": "Jorge Jesus",
       "country": "Saudi Arabia",
-      "imageUrl": "Al_Hilal_SFC_Logo.svg.png"
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/teams/Al_Hilal_SFC_Logo.svg.png"
     },
     {
       "id": "TEAM-006",
@@ -57,7 +57,7 @@
       "stadium": "Etihad Stadium",
       "manager": "Pep Guardiola",
       "country": "England",
-      "imageUrl": "Manchester_City_FC_badge.svg.png"
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/teams/Manchester_City_FC_badge.svg.png"
     },
     {
       "id": "TEAM-007",
@@ -67,7 +67,7 @@
       "stadium": "Camp Nou",
       "manager": "Xavi Hernández",
       "country": "Spain",
-      "imageUrl": "FC_Barcelona_(crest).svg.webp"
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/teams/FC_Barcelona_(crest).svg.webp"
     },
     {
       "id": "TEAM-008",
@@ -77,6 +77,6 @@
       "stadium": "Santiago Bernabéu",
       "manager": "Carlo Ancelotti",
       "country": "Spain",
-      "imageUrl": "Real_Madrid_CF.svg.webp"
+      "imageUrl": "https://raw.githubusercontent.com/Ilias492610/football-json/main/public/images/teams/Real_Madrid_CF.svg.webp"
     }
   ]

@@ -1,11 +1,9 @@
 import readline from 'readline';
-import fetch from 'node-fetch'; // Ensure node-fetch is installed (npm install node-fetch@3)
+import fetch from 'node-fetch';
 import { Player, Team, CurrentTeam } from './types';
 
-// --- Configuration: Replace with your actual GitHub Raw URLs ---
-const PLAYERS_JSON_URL = 'https://raw.githubusercontent.com/Ilias492610/football-json/main/public/players/players.json';
-const TEAMS_JSON_URL = 'https://raw.githubusercontent.com/Ilias492610/football-json/main/public/teams/teams.json';
-// ----------------------------------------------------------------
+const PLAYERS_JSON_URL = 'https://raw.githubusercontent.com/Ilias492610/football-json/main/players.json';
+const TEAMS_JSON_URL = 'https://raw.githubusercontent.com/Ilias492610/football-json/main/teams.json';
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -16,22 +14,24 @@ async function fetchData<T>(url: string): Promise<T[]> {
     try {
         const response = await fetch(url);
         if (!response.ok) {
-            throw new Error(`Error fetching data from ${url}: ${response.statusText}`);
+            throw new Error(`Fout bij het ophalen van data van ${url}: ${response.statusText}`);
         }
+        
         const data = await response.json() as T[];
         return data;
     } catch (error) {
-        console.error(`Failed to fetch or parse data from ${url}:`, error);
-        return []; // Return empty array on error to prevent crash
+        console.error(`Fout bij het ophalen of verwerken van data van ${url}:`, error);
+        return [];
     }
 }
 
 function displayAllPlayers(players: Player[]): void {
     if (!players || players.length === 0) {
-        console.log('No player data available or failed to load.');
+        console.log('Geen spelersdata beschikbaar of laden mislukt.');
         return;
     }
-    console.log('\n--- All Players ---');
+    
+    console.log('\n--- Alle Spelers ---');
     players.forEach(player => {
         console.log(`- ${player.name} (${player.id})`);
     });
@@ -42,85 +42,81 @@ async function displayPlayerDetails(playerId: string, players: Player[], teams: 
     const player = players.find(p => p.id.toLowerCase() === playerId.toLowerCase());
 
     if (player) {
-        console.log(`\n--- Details for ${player.name} (${player.id}) ---`);
-        console.log(`  Description: ${player.description}`);
-        console.log(`  Age: ${player.age}`);
-        console.log(`  Active: ${player.isActive}`);
-        console.log(`  Birthdate: ${player.birthDate}`);
-        console.log(`  Image: ${player.imageUrl}`);
-        console.log(`  Position: ${player.position}`);
-        console.log(`  Abilities/Skills: ${player.skills.join(', ')}`);
-        console.log(`  Nationality: ${player.nationality}`);
+        console.log(`\n--- Details voor ${player.name} (${player.id}) ---`);
+        console.log(`  Beschrijving: ${player.description}`);
+        console.log(`  Leeftijd: ${player.age}`);
+        console.log(`  Actief: ${player.isActive ? 'Ja' : 'Nee'}`);
+        console.log(`  Geboortedatum: ${player.birthDate}`);
+        console.log(`  Afbeelding: ${player.imageUrl}`);
+        console.log(`  Positie: ${player.position}`);
+        console.log(`  Vaardigheden: ${player.skills.join(', ')}`);
+        console.log(`  Nationaliteit: ${player.nationality}`);
 
-        // Find the full team details from the teams array if currentTeam.id exists
         const teamDetails = teams.find(t => t.id === player.currentTeam.id);
 
         if (teamDetails) {
             console.log(`  Team: ${teamDetails.name} (${teamDetails.id})`);
-            console.log(`    League: ${teamDetails.league}`);
-            console.log(`    Founded: ${teamDetails.foundedYear}`);
-            console.log(`    Stadium: ${teamDetails.stadium}`);
+            console.log(`    Competitie: ${teamDetails.league}`);
+            console.log(`    Opgericht: ${teamDetails.foundedYear}`);
+            console.log(`    Stadion: ${teamDetails.stadium}`);
             console.log(`    Manager: ${teamDetails.manager}`);
-            console.log(`    Country: ${teamDetails.country}`);
+            console.log(`    Land: ${teamDetails.country}`);
             console.log(`    Logo: ${teamDetails.imageUrl}`);
-        } else if (player.currentTeam) { // Fallback to data in player object if full team details not found
+        } else if (player.currentTeam) { 
             console.log(`  Team: ${player.currentTeam.name} (${player.currentTeam.id})`);
-            console.log(`    League: ${player.currentTeam.league}`);
-            console.log(`    Founded: ${player.currentTeam.foundedYear}`);
-            console.log(`    Stadium: ${player.currentTeam.stadium}`);
-            // teamLogoUrl is in player.currentTeam, other details like manager, country are in the main teams.json
-        }
-         else {
-            console.log('  Team: Data not available');
+            console.log(`    Competitie: ${player.currentTeam.league}`);
+            console.log(`    Opgericht: ${player.currentTeam.foundedYear}`);
+            console.log(`    Stadion: ${player.currentTeam.stadium}`);
+        } else {
+            console.log('  Team: Gegevens niet beschikbaar');
         }
         console.log('--------------------------');
     } else {
-        console.log(`Player with ID "${playerId}" not found.`);
+        console.log(`Speler met ID "${playerId}" niet gevonden.`);
     }
 }
 
 async function mainMenu(): Promise<void> {
-    console.log('\nWelcome to the JSON data viewer!');
-    console.log('Fetching data, please wait...');
+    console.log('\nWelkom bij de voetbal JSON-gegevensviewer!');
+    console.log('Gegevens ophalen, even geduld...');
 
     const players = await fetchData<Player>(PLAYERS_JSON_URL);
     const teams = await fetchData<Team>(TEAMS_JSON_URL);
 
     if (players.length === 0) {
-        console.log('Could not load player data. Please check the PLAYERS_JSON_URL and your internet connection.');
-        // rl.close(); // Optionally close if critical data fails to load
-        // return;
+        console.log('Kon spelersgegevens niet laden. Controleer de PLAYERS_JSON_URL en je internetverbinding.');
     }
-    // We can proceed even if teams data is missing, details will be limited.
 
     function showMenu() {
         console.log('\nMenu:');
-        console.log('1. View all players');
-        console.log('2. Filter player by ID');
-        console.log('3. Exit');
-        rl.question('Please enter your choice: ', async (choice) => {
+        console.log('1. Alle spelers bekijken');
+        console.log('2. Speler zoeken op ID');
+        console.log('3. Afsluiten');
+        
+        rl.question('Voer je keuze in: ', async (choice) => {
             switch (choice.trim()) {
                 case '1':
                     displayAllPlayers(players);
                     showMenu();
                     break;
                 case '2':
-                    rl.question('Please enter the Player ID you want to filter by: ', async (id) => {
+                    rl.question('Voer het ID in van de speler die je wilt zoeken: ', async (id) => {
                         await displayPlayerDetails(id.trim(), players, teams);
                         showMenu();
                     });
                     break;
                 case '3':
-                    console.log('Exiting application.');
+                    console.log('Applicatie wordt afgesloten.');
                     rl.close();
                     break;
                 default:
-                    console.log('Invalid choice. Please try again.');
+                    console.log('Ongeldige keuze. Probeer het opnieuw.');
                     showMenu();
                     break;
             }
         });
     }
+
     showMenu();
 }
 

@@ -1,6 +1,6 @@
 import test from "node:test";
 import { expect } from "@jest/globals";
 
-test("Example test", () => {
+test("Voorbeeldtest", () => {
     expect(true).toBe(true);
 });

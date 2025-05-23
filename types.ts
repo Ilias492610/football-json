@@ -1,8 +1,5 @@
 import { ObjectId } from "mongodb";
 
-/**
- * Interface for Player data
- */
 export interface Player {
     id: string;
     name: string;
@@ -17,9 +14,6 @@ export interface Player {
     currentTeam: CurrentTeam;
 }
 
-/**
- * Interface for Team data
- */
 export interface Team {
     id: string;
     name: string;
@@ -31,9 +25,6 @@ export interface Team {
     imageUrl: string;
 }
 
-/**
- * Interface for CurrentTeam data within Player
- */
 export interface CurrentTeam {
     id: string;
     name: string;
@@ -43,9 +34,6 @@ export interface CurrentTeam {
     stadium: string;
 }
 
-/**
- * Interface for User data
- */
 export interface User {
     _id?: ObjectId;
     username: string;
@@ -54,9 +42,6 @@ export interface User {
     createdAt?: Date;
 }
 
-/**
- * Enum for user roles
- */
 export enum UserRole {
     ADMIN = 'ADMIN',
     USER = 'USER'
