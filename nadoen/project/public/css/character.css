@@ -1,0 +1,99 @@
+:root {
+    --background-image: url('/assets/images/login-background-temp.webp');
+}
+
+body {
+    background-image: var(--background-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+.character-page {
+    padding-top: 50px;
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+    font-size: 20px;
+
+    img {
+        border-radius: 100%;
+        height: 275px;
+    }
+
+    article {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin: 25px;
+
+        section {
+            padding: 35px;
+            margin: 15px;
+            border-radius: 5px;
+            border: solid #455641 0.5px;
+            background-color: rgba(210, 180, 140, 0.7);
+            backdrop-filter: blur(10px);
+            text-align: left;
+
+            h1 {
+                font-size: 35px;
+                padding-bottom: 5px;
+                transition: transform 0.2s ease;
+
+                &:hover {
+                    transform: scaleY(1.45) scaleX(1.015);
+                    /* transform-origin: left; */
+
+                }
+
+                &:active {
+                    transform: scaleY(1.45) scaleX(1.015);
+                }
+            }
+
+            .h2 {
+                font-weight: bold;
+            }
+
+        }
+    }
+
+    .quotes {
+        display: flex;
+        flex-direction: row;
+        justify-self: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: 100%;
+        width: 85%;
+        padding: 35px;
+        margin: 25px;
+        border-radius: 5px;
+        border: solid #455641 0.5px;
+        background-color: rgba(210, 180, 140, 0.7);
+        backdrop-filter: blur(10px);
+
+        ul {
+            li {
+                border: solid rgb(121, 113, 102);
+                background-color: rgba(255, 255, 255, 0.65);
+                min-width: 200px;
+                margin-top: 15px;
+                padding: 10px;
+                position: relative;
+
+            }
+        }
+    }
+}
+
+@media (max-width: 923px) {
+    h1 {
+        display: flex;
+        justify-self: center;
+    }
+}

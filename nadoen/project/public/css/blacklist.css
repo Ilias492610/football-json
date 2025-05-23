@@ -1,0 +1,208 @@
+:root {
+    --background-image: url('/assets/images/login-background-temp.webp');
+}
+
+body {
+    background-image: var(--background-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    /* opacity: 35%; */
+}
+
+.blacklist-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 55px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* margin: 25px; */
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+
+    .blacklist-quote-box {
+        h1 {
+            font-weight: normal;
+        }
+
+        h2 {
+            font-size: medium;
+            font-weight: normal;
+        }
+
+        li {
+            margin-bottom: -5px;
+        }
+
+        .input-li {
+
+            input {
+                width: 100%;
+                padding: 5px;
+            }
+        }
+
+
+    }
+
+    .quote-box {
+
+        width: 50%;
+
+        h1 {
+            text-decoration: none;
+            margin-top: -0.5rem;
+        }
+
+        ul {
+            li {
+                width: 100%;
+                display: block;
+                position: static;
+            }
+
+            .input-li {
+                padding: 0;
+                height: 3rem;
+
+                input {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    box-sizing: border-box;
+                    border: none;
+                    text-align: center;
+                    font-size: medium;
+                }
+            }
+        }
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        border-radius: 10px;
+        height: 100%;
+        min-width: 350px;
+        border: solid #455641 0.5px;
+        /* background-color: rgba(224, 201, 173, 0.5);  */
+        background-color: rgba(210, 180, 140, 0.7);
+        backdrop-filter: blur(10px);
+
+        a {
+            transition: transform 0.2s ease;
+
+            &:hover {
+                transform: scale(1.065);
+            }
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-top: 15px;
+        }
+
+        img {
+            border-radius: 100%;
+            height: 175px;
+        }
+
+        ul {
+            padding: 5px;
+
+            li {
+                border: solid rgb(121, 113, 102);
+                background-color: rgba(255, 255, 255, 0.65);
+                width: 300px;
+                margin-top: 15px;
+                padding: 10px;
+                margin-bottom: -25px;
+                /*Om de svg images naast de reden van blokkering te zetten */
+                display: flex;
+                align-items: center;
+                position: relative;
+                justify-content: space-between;
+
+                .bi-x-circle-fill {
+                    color: darkred;
+                    position: absolute;
+                    right: -10px;
+                    top: -10px;
+                    font-size: 25px;
+                    cursor: pointer;
+                    background-color: white;
+                    border-radius: 50%;
+                    width: 25px;
+                    height: 25px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+            }
+
+            .hidden-quote {
+                display: none;
+                /* Hide extra quotes */
+            }
+
+            .expanded {
+                display: block;
+                /* Show extra quotes when expanded */
+            }
+
+            .bi-pencil-square {
+                position: relative;
+                font-size: 20px;
+                right: 135px;
+                top: 35px;
+            }
+
+            .blocked {
+                width: 90%;
+                max-width: 300px;
+                margin-top: 5px;
+                margin-bottom: 1px;
+                position: relative;
+                left: 30px;
+                align-items: flex-end;
+                text-align: right;
+                color: grey;
+                font-style: italic;
+
+                textarea {
+                    width: 100%;
+                }
+            }
+
+            i:hover {
+                cursor: pointer;
+            }
+        }
+
+        .toggle-quotes {
+            position: relative;
+            top: -6px;
+            margin-top: 40px;
+            padding: 5px 8px;
+            background-color: #455641;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-quotes:hover {
+            background-color: #5a724d;
+        }
+    }
+}

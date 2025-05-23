@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title%></title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- <link rel="stylesheet" href="./css/favorites.css" /> -->
+    <link rel="stylesheet" href="./css/blacklist.css" />
+    <link rel="stylesheet" href="./css/dark-mode.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&family=Qwitcher+Grypen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+    <script type="module" src="./javascript/quotesExpansion.js" defer></script>
+    <script src="./javascript/profile.js"></script>
+  </head>
+  <body>
+    <%- include("partials/nav") %>
+    <main>
+      <section class="blacklist-page">
+        <%for (let item of bQ) {%>
+          <article>
+          <a href="../character"
+            ><img
+              src="./assets/images/characters/legolas/legolas.png"
+              alt=""
+            />
+            <h1><%=item.character.name%></h1>
+          </a>
+
+          <ul>
+            <section>
+              <form action="/blacklist/<%=encodeURIComponent(item.dialog[0].quoteText)%>" method="post">
+                <li>"<%=item.dialog[0].quoteText%>"<button type="submit"><i class="bi bi-x-circle-fill"></i></button></li>
+              </form>
+              <form action="/edit-quote/<%=encodeURIComponent(item.dialog[0].quoteText)%>" method="get">
+                <button type="submit"><i class="bi bi-pencil-square"></i></button>
+                <li class="blocked"><%=item.dialog[0].blackListReason%></li>
+              </form>
+            </section>
+            <%if (item.dialog.length > 1) {%>
+              <%for (let i = 1; i < item.dialog.length; i++) {%>
+                <section class="hidden-quote">
+              <form action="/blacklist/<%=encodeURIComponent(item.dialog[i].quoteText)%>" method="post">
+                <li>"<%=item.dialog[i].quoteText%>"<button type="submit"><i class="bi bi-x-circle-fill"></i></button></li>
+              </form>
+              <form action="/edit-quote/<%=encodeURIComponent(item.dialog[i].quoteText)%>" method="get">
+                <button type="submit"><i class="bi bi-pencil-square"></i></button>
+                <li class="blocked"><%=item.dialog[i].blackListReason%></li>
+              </form>
+            </section>
+                <%}%> 
+            <%}%>
+          </ul>
+          <%if (item.dialog.length > 1) {%>
+            <button class="toggle-quotes">Toon <%=item.dialog.length - 1%> andere quotes</button>
+          <%}%>
+        </article>
+        <%}%>
+      </section>
+      <a class="up" href="#top"><i class="bi bi-arrow-up-circle"></i></a>
+    </main>
+    <%- include("partials/footer") %>

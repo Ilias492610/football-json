@@ -1,0 +1,155 @@
+[
+  {
+    "name": "Arwen",
+    "race": "Elf",
+    "gender": "Female",
+    "id": "5cd99d4bde30eff6ebccfc07",
+    "quote": "May the grace of the Valar protect you."
+  },
+  {
+    "name": "Frodo Baggins",
+    "race": "Hobbit",
+    "gender": "Male",
+    "id": "5cd99d4bde30eff6ebccfc15",
+    "quote": "Gandalf?"
+  },
+  {
+    "name": "Bilbo Baggins",
+    "race": "Hobbit",
+    "gender": "Male",
+    "id": "5cd99d4bde30eff6ebccfc38",
+    "quote": "Tell me again lad, where are we going?"
+  },
+  {
+    "name": "Boromir",
+    "race": "Human",
+    "gender": "Male",
+    "id": "5cd99d4bde30eff6ebccfc57",
+    "quote": "This city was once the jewel of our kingdom. A place of light and beauty and music. And so it shall be once more!Let the armies of Mordor know this: Never again will the land of my people fall into enemy hands. This city of Osgiliath has been reclaimed,for Gondor!"
+  },
+  {
+    "name": "Elrond",
+    "race": "Elf",
+    "gender": "Male",
+    "id": "5cd99d4bde30eff6ebccfcc8",
+    "quote": "I Aear c'n ven na mar."
+  },
+  {
+    "name": "Faramir",
+    "race": "Human",
+    "gender": "Male",
+    "id": "5cd99d4bde30eff6ebccfcef",
+    "quote": "The City has fallen silent. There is no warmth left in the sun."
+  },
+  {
+    "name": "Samwise Gamgee",
+    "race": "Hobbit",
+    "gender": "Male",
+    "id": "5cd99d4bde30eff6ebccfd0d",
+    "quote": "Haven't you had any sleep Mr Frodo?"
+  },
+  {
+    "name": "Gimli",
+    "race": "Dwarf",
+    "gender": "Male",
+    "id": "5cd99d4bde30eff6ebccfd23",
+    "quote": "Aaaahh!"
+  },
+  {
+    "name": "Legolas",
+    "race": "Elf",
+    "gender": "Male",
+    "id": "5cd99d4bde30eff6ebccfd81",
+    "quote": "One that is cursed. Long ago the men of the mountains swore an oath to the last King of Gondor, to come to his aid, to fight. But when the time came, when Gondor's need was dire, they fled vanishing into the darkness of the mountain. And so Isildur cursed them, never to rest until they had fulfilled their pledge. Who shall call them from the grey twilight, the forgotten people? The heir of him to whom the oath they swore. From the North shall he come, need shall drive him. He shall pass the door to the Paths of the Dead."
+  },
+  {
+    "name": "Gollum",
+    "race": "Hobbit",
+    "gender": "Male",
+    "id": "5cd99d4bde30eff6ebccfe9e",
+    "quote": "Deagol!!"
+  },
+  {
+    "name": "Gandalf",
+    "race": "Maiar",
+    "gender": "Male",
+    "id": "5cd99d4bde30eff6ebccfea0",
+    "quote": "Now come the days of the King. May they be blessed."
+  },
+  {
+    "name": "Saruman",
+    "race": "Maiar",
+    "gender": "Male",
+    "id": "5cd99d4bde30eff6ebccfea4",
+    "quote": "You have fought many wars and slain many men Theoden King and made peace afterwards. Can we not take counsel together as we once did, my old friend?Can we not have peace you and I?"
+  },
+  {
+    "name": "Éowyn",
+    "race": "Men",
+    "gender": "Female",
+    "id": "5cdbdecb6dc0baeae48cfa59",
+    "quote": "I will kill you if you touch him."
+  },
+  {
+    "name": "Irolas",
+    "race": "Human",
+    "gender": null,
+    "id": "5cd9d5cf844dc4c55e47aff0",
+    "quote": "Quick! Hurry!"
+  },
+  {
+    "id": "5cd9d576844dc4c55e47afee"
+  },
+  {
+    "name": "Maeglin",
+    "race": "Elf",
+    "gender": "Male",
+    "id": "5cd99d4bde30eff6ebccfd98",
+    "quote": "No known quote."
+  },
+  {
+    "name": "Falco Chubb-Baggins",
+    "race": "Hobbit",
+    "gender": "Male",
+    "id": "5cd99d4bde30eff6ebccfc98",
+    "quote": "No known quote."
+  },
+  {
+    "name": "Ponto Baggins II",
+    "race": "Hobbit",
+    "gender": "Male",
+    "id": "5cd99d4bde30eff6ebccfc1a",
+    "quote": "No known quote."
+  },
+  {
+    "name": "Helm Hammerhand",
+    "race": "Human",
+    "gender": "Male",
+    "id": "5cd99d4bde30eff6ebccfd50",
+    "quote": "No known quote."
+  },
+  {
+    "name": "Frár",
+    "race": "Dwarf",
+    "gender": "Male",
+    "id": "5cd99d4bde30eff6ebccfcfe",
+    "quote": "No known quote."
+  },
+  {
+    "name": "Tar-Alcarin",
+    "race": "Human",
+    "gender": "Male",
+    "id": "5cd99d4bde30eff6ebccfdf0",
+    "quote": "No known quote."
+  },
+  {
+    "name": "Frodo Gardner",
+    "race": "Hobbit",
+    "gender": "Male",
+    "id": "5cd99d4bde30eff6ebccfd0a",
+    "quote": "No known quote."
+  },
+  {
+    "id": "5cd9d533844dc4c55e47afed"
+  }
+]

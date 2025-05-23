@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/blacklist.css" />
+    <link rel="stylesheet" href="/css/dark-mode.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+</head>
+<body>
+    <%- include("partials/nav") %>
+    <main>
+      <section class="blacklist-page">
+        <article class="blacklist-quote-box">
+          <form action="/edit-quote/<%=quote.dialog[0].quoteText%>/update" method="post">
+            <a href="./character"
+            ><img
+              src="/assets/images/characters/frodo/frodo.webp"
+              alt=""
+            />
+          </a>
+           <h1 name="<%=quote.character.name%>"><%=quote.character.name%></h1>
+
+
+          <ul>
+            <li>
+              <h2 name="<%=quote.dialog[0].quoteText%>"><%=quote.dialog[0].quoteText%></h2>
+            </li>
+            <li class="input-li"><input type="text" class=".reason-box" name="blackListReason" value="<%=quote.dialog[0].blackListReason%>"></li>
+          </ul>
+            <button type="submit" class="toggle-quotes">UPDATE INFORMATIE!</button>
+          </form>
+        </article>
+      </section>
+    </main>
+    <%- include("partials/footer") %>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title%></title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/welcomepage.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="./javascript/welcomepage.js" defer></script>
+    <link rel="icon" type="image/jpg" href="/assets/images/favicon.jpg">
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <div class="welcome-container">
+      <div class="welcome-box">
+        <h1>Welkom, <%=player.username%>!</h1>
+        <p>
+          Stap binnen in de wereld van <strong>Middle-earth</strong> en test je
+          kennis met de ultieme <em>Lord of the Rings</em> quotes quiz.
+        </p>
+        <p>Jouw reis begint hier! Dit kun je doen:</p>
+        <ul>
+          <li>
+            <strong>Quotes Quiz:</strong> 10 rondes waarin je quotes koppelt aan
+            karakters en films.
+          </li>
+          <li>
+            <strong>Sudden Death Modus:</strong> Hoeveel quotes kun jij correct
+            raden zonder fouten?
+          </li>
+          <li>
+            <strong>Favorieten:</strong> Kies je favoriete quotes en beheer ze
+            in je lijst.
+          </li>
+          <li>
+            <strong>Blacklist:</strong> Markeer quotes die je niet in de quiz
+            wilt zien, met een reden.
+          </li>
+          <li>
+            <strong>Statistieken:</strong> Bekijk jouw score en high scores, en
+            verbeter je prestaties!
+          </li>
+          <li>
+            <strong>Karakter Info:</strong> Klik op een karakter om meer over
+            hen te leren.
+          </li>
+        </ul>
+        <p>
+          Het wordt misschien niet makkelijk, maar met een beetje
+          doorzettingsvermogen kom je er wel.
+        </p>
+        <p class="h1">Succes!</p>
+        <a href="./quiz"><button>Begin je avontuur</button></a>
+      </div>
+    </div>
+  </body>
+</html>

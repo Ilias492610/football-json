@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=title%></title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/quiz.css" />
+    <link rel="stylesheet" href="./css/dark-mode.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&family=Qwitcher+Grypen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+    <script src="javascript/profile.js"></script>
+    <script src="./javascript/thumbToggle.js" defer></script>
+    <script src="./javascript/quoteManager.js" defer></script>
+    <link rel="icon" type="image/jpg" href="../public/assets/images/favicon.jpg">
+  </head>
+  <style>
+    body {
+      background-image: url("./assets/images/Toren.webp");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: fixed;
+    }
+  </style>
+  <body>
+    <%- include("partials/nav") %>
+    <main class="quiz">
+      <h2>Vraag: 01</h2>
+      <h2>
+        "Quote van karakter"
+        <i class="bi bi-hand-thumbs-up"></i>
+        <i class="bi bi-hand-thumbs-down"></i>
+      </h2>
+      <br />
+
+      <h3>Van welk karakter is deze quote?</h3>
+
+      <section class="options">
+        <figure>
+          <img src="./assets/images/characters/frodo/frodo.webp" alt="" />
+          <figcaption>Frodo</figcaption>
+        </figure>
+        
+        <figure>
+          <img
+          src="./assets/images/characters/gandalf/gandalf.webp"
+          alt=""
+        />
+        <figcaption>Gandalf</figcaption>
+        </figure>
+        <figure>
+          <img src="./assets/images/characters/legolas/legolas.png" alt="" />
+          <figcaption>Legolas</figcaption>
+        </figure>
+        
+      </section>
+
+      <h3>Van welke film is deze quote?</h3>
+      <section class="options">
+        <figure>
+          <img src="./assets/images/LOTR.webp" alt="" />
+          <figcaption>The Fellowship of the Ring</figcaption>
+        </figure>
+
+        <figure>
+          <img src="./assets/images/LOTR.webp" alt="" />
+          <figcaption>The Two Towers</figcaption>
+        </figure>
+
+        <figure>
+          <img src="./assets/images/LOTR.webp" alt="" />
+          <figcaption>The Return of the King</figcaption>
+        </figure>
+      </section>
+
+      <button><a href="">Volgende vraag</a></button>
+    </main>
+    <%- include("partials/footer") %>

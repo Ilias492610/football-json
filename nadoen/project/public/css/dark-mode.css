@@ -1,0 +1,163 @@
+.dark-mode {
+    --color-light-gold: #D14B28;
+    --color-tan: #D14B28;
+    --color-beige: #2e2e2e;
+    --color-brown: #D14B28;
+    --color-dark-brown: #E5D5C5;
+    --color-dialog-bg: #2e2e2e;
+    --background-image: url('../assets/images/Toren.webp');
+    --background-overlay: rgba(46, 46, 46, 0.7);
+
+    body {
+        background-color: var(--background-image);
+    }
+
+    .quiz {
+        background-color: var(--background-overlay);
+        h2, h3, i {
+            color: var(--color-dark-brown);
+        }
+        button {
+            color: var(--color-dark-brown);
+            background-color: darkred;
+        }
+    }
+
+    .quiz-pagina {
+        article {
+            background-color: var(--color-beige);
+            border: solid var(--color-brown) 0.5px;
+        }
+    }
+
+    .character-page {
+        article {
+            section {
+                background-color: var(--background-overlay);
+                border: solid var(--color-brown); 
+                h1{
+                    color: var(--color-dark-brown);
+                }
+                li {
+                    color: var(--color-dark-brown);
+                }
+            }
+        }
+        .quotes {
+            background-color: var(--background-overlay);
+            border: solid var(--color-brown); 
+            h1, .h2, li {
+                background-color: var(--color-beige);
+                border: solid var(--color-brown); 
+                color: var(--color-dark-brown);
+            }
+        }
+    }
+
+    .blacklist-page /* Dit is ook de pagina voor favorieten */{
+        article {
+            background-color: var(--background-overlay);
+            border: solid var(--color-brown) 0.5px;
+            a {
+                color: var(--color-dark-brown);
+            }
+            ul {
+                li {
+                    background-color: var(--color-beige);
+                    border: solid rgb(177, 139, 44);
+                    color: var(--color-dark-brown)
+                }
+                .blocked {
+                    color: var(--color-dark-brown);
+                }
+                .bi-pencil-square {
+                    color: var(--color-dark-brown);
+                }
+            }
+
+            /* Verander dit als je de kleuren wilt aanpassen van de buttons -Tawan */
+            .toggle-quotes { 
+                color: var(--color-dark-brown);
+                background-color: darkred;
+
+                &:hover {
+                    background-color: rgb(148, 74, 74);
+                }
+            }
+        }
+    }
+
+    /* .up { --Verander dit als je de kleuren van het up circeltje wilt veranderen -Tawan
+        background-color: purple;
+        i {
+            color: teal;
+        }
+    } */
+
+    header {
+        background-image: linear-gradient(to bottom, rgba(46, 46, 46, 0.8), rgba(0, 0, 0, 0.8));
+        border-bottom: 2px solid var(--color-brown);
+        color: var(--color-dark-brown);
+
+        nav {
+            .nav-links a {
+                color: var(--color-dark-brown);
+
+                &:hover {
+                    color: var(--color-light-gold);
+                }
+            }
+
+            .user-stats .user-info {
+                .user-level {
+                    color: var(--color-dark-brown);
+                }
+                .seperator {
+                    color: var(--color-dark-brown);
+                }
+                .user-type {
+                    color: var(--color-dark-brown);
+                }
+            }
+
+            .profile-icon a {
+                color: var(--color-dark-brown);
+
+                &:hover {
+                    color: var(--color-light-gold);
+                }
+            }
+        }
+    }
+
+    footer {
+        background-color: rgba(40, 20, 5, 0.8);
+        background-image: linear-gradient(to top, rgba(46, 46, 46, 0.8), rgba(0, 0, 0, 0.8));
+        border-top: 2px solid var(--color-brown);
+        color: var(--color-dark-brown);
+
+        .footer-container {
+            .footer-content {
+                .copyright {
+                    color: var(--color-dark-brown);
+                }
+
+                .social-icons a {
+                    color: var(--color-dark-brown);
+                    background-color: rgba(90, 50, 20, 0.4);
+
+                    &:hover {
+                        color: var(--color-dark-brown);
+                        background-color: rgba(90, 50, 20, 0.6);
+                    }
+                }
+            }
+
+            .footer-team p, .footer-team span:not(:last-child)::after {
+                color: var(--color-dark-brown);
+            }
+        }
+    }
+
+
+}
