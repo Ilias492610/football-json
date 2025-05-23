@@ -6,8 +6,10 @@
     "scripts": {
         "test": "jest",
         "start": "ts-node index.ts",
+        "start:prod": "node dist/index.js",
         "dev": "ts-node-dev --respawn index.ts",
-        "console": "ts-node consoleApp.ts"
+        "console": "ts-node consoleApp.ts",
+        "build": "tsc"
     },
     "dependencies": {
         "@types/cookie-parser": "^1.4.8",
