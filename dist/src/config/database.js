@@ -19,7 +19,8 @@ const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://hamdaouiilias14:N7ymXJvMs0fzDvyA@webontwikkeling.abgrzzs.mongodb.net/?retryWrites=true&w=majority&appName=Webontwikkeling';
         console.log('Connecting to MongoDB...');
-        console.log('MongoDB URI:', mongoURI);
+        // Don't log the full URI for security reasons
+        console.log('MongoDB URI configured:', mongoURI ? 'Yes' : 'No');
         const conn = yield mongoose_1.default.connect(mongoURI);
         console.log(`MongoDB Connected: ${conn.connection.host}`);
         // Toon database info
