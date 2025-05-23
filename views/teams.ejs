@@ -1,71 +1,112 @@
-<%- include('./partials/header', { title: 'Teams' }) %>
-
-<div class="page-header">
-  <h1>Teams</h1>
-</div>
-
-<div class="filter-section">
-  <form action="/teams" method="GET" class="search-form">
-    <input 
-      type="text" 
-      name="search" 
-      placeholder="Search by name..." 
-      value="<%= searchQuery %>"
-      class="search-input"
-    >
-    <input type="hidden" name="sortField" value="<%= sortField %>">
-    <input type="hidden" name="sortOrder" value="<%= sortOrder %>">
-    <button type="submit" class="search-button">Search</button>
-  </form>
-</div>
-
-<div class="table-container">
-  <table class="data-table">
-    <thead>
-      <tr>
-        <th>
-          <a href="/teams?sortField=name&sortOrder=<%= sortField === 'name' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>">
-            Name <%= sortField === 'name' ? (sortOrder === 'asc' ? '▲' : '▼') : '' %>
-          </a>
-        </th>
-        <th>
-          <a href="/teams?sortField=league&sortOrder=<%= sortField === 'league' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>">
-            League <%= sortField === 'league' ? (sortOrder === 'asc' ? '▲' : '▼') : '' %>
-          </a>
-        </th>
-        <th>
-          <a href="/teams?sortField=country&sortOrder=<%= sortField === 'country' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>">
-            Country <%= sortField === 'country' ? (sortOrder === 'asc' ? '▲' : '▼') : '' %>
-          </a>
-        </th>
-        <th>
-          <a href="/teams?sortField=foundedYear&sortOrder=<%= sortField === 'foundedYear' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>">
-            Founded <%= sortField === 'foundedYear' ? (sortOrder === 'asc' ? '▲' : '▼') : '' %>
-          </a>
-        </th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% if (teams.length === 0) { %>
-        <tr>
-          <td colspan="5" class="no-results">No teams found</td>
-        </tr>
-      <% } else { %>
-        <% teams.forEach(team => { %>
-          <tr>
-            <td><%= team.name %></td>
-            <td><%= team.league %></td>
-            <td><%= team.country %></td>
-            <td><%= team.foundedYear %></td>
-            <td>
-              <a href="/teams/<%= team.id %>" class="view-button">View</a>
-            </td>
-          </tr>
-        <% }) %>
-      <% } %>
-    </tbody>
-  </table>
-</div>
-
-<%- include('./partials/footer') %> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Teams</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    
+    <main class="container">
+        <div class="page-header">
+            <h1>Football Teams</h1>
+            <form action="/teams" method="GET" class="search-form">
+                <input
+                    type="text"
+                    name="search"
+                    placeholder="Search by name..."
+                    value="<%= searchQuery %>"
+                    class="search-input"
+                >
+                <input type="hidden" name="sortField" value="<%= sortField %>">
+                <input type="hidden" name="sortOrder" value="<%= sortOrder %>">
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </div>
+        
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>
+                            <a href="/teams?sortField=name&sortOrder=<%= sortField === 'name' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>" class="<%= sortField === 'name' ? 'active' : '' %>">
+                                Name
+                                <% if (sortField === 'name') { %>
+                                    <%= sortOrder === 'asc' ? '▲' : '▼' %>
+                                <% } else { %>
+                                    ▲
+                                <% } %>
+                            </a>
+                        </th>
+                        <th>
+                            <a href="/teams?sortField=country&sortOrder=<%= sortField === 'country' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>" class="<%= sortField === 'country' ? 'active' : '' %>">
+                                Country
+                                <% if (sortField === 'country') { %>
+                                    <%= sortOrder === 'asc' ? '▲' : '▼' %>
+                                <% } else { %>
+                                    ▲
+                                <% } %>
+                            </a>
+                        </th>
+                        <th>
+                            <a href="/teams?sortField=league&sortOrder=<%= sortField === 'league' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>" class="<%= sortField === 'league' ? 'active' : '' %>">
+                                League
+                                <% if (sortField === 'league') { %>
+                                    <%= sortOrder === 'asc' ? '▲' : '▼' %>
+                                <% } else { %>
+                                    ▲
+                                <% } %>
+                            </a>
+                        </th>
+                        <th>
+                            <a href="/teams?sortField=foundedYear&sortOrder=<%= sortField === 'foundedYear' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>" class="<%= sortField === 'foundedYear' ? 'active' : '' %>">
+                                Founded
+                                <% if (sortField === 'foundedYear') { %>
+                                    <%= sortOrder === 'asc' ? '▲' : '▼' %>
+                                <% } else { %>
+                                    ▲
+                                <% } %>
+                            </a>
+                        </th>
+                        <th>
+                            <a href="/teams?sortField=manager&sortOrder=<%= sortField === 'manager' && sortOrder === 'asc' ? 'desc' : 'asc' %>&search=<%= searchQuery %>" class="<%= sortField === 'manager' ? 'active' : '' %>">
+                                Manager
+                                <% if (sortField === 'manager') { %>
+                                    <%= sortOrder === 'asc' ? '▲' : '▼' %>
+                                <% } else { %>
+                                    ▲
+                                <% } %>
+                            </a>
+                        </th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (teams.length === 0) { %>
+                        <tr>
+                            <td colspan="6" class="no-results">No teams found</td>
+                        </tr>
+                    <% } else { %>
+                        <% teams.forEach(team => { %>
+                            <tr>
+                                <td><%= team.name %></td>
+                                <td><%= team.country %></td>
+                                <td><%= team.league %></td>
+                                <td><%= team.foundedYear %></td>
+                                <td><%= team.manager %></td>
+                                <td>
+                                    <a href="/team/<%= team.id %>" class="view-button">View</a>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    
+    <%- include('partials/footer') %>
+</body>
+</html> 

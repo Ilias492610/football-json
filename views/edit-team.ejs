@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Team - Football App</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <style>
+        .edit-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .btn-primary {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn-primary:hover {
+            background-color: #45a049;
+        }
+        .btn-secondary {
+            background-color: #f1f1f1;
+            color: #333;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .btn-secondary:hover {
+            background-color: #ddd;
+        }
+        .form-actions {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/header') %>
+    
+    <div class="edit-container">
+        <h1>Edit Team</h1>
+        
+        <form action="/team/<%= team.id %>/update" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" value="<%= team.name %>" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="country">Country</label>
+                <input type="text" id="country" name="country" value="<%= team.country %>" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="league">League</label>
+                <input type="text" id="league" name="league" value="<%= team.league %>" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="foundedYear">Founded Year</label>
+                <input type="number" id="foundedYear" name="foundedYear" value="<%= team.foundedYear %>" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="stadium">Stadium</label>
+                <input type="text" id="stadium" name="stadium" value="<%= team.stadium %>" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="manager">Manager</label>
+                <input type="text" id="manager" name="manager" value="<%= team.manager %>" required>
+            </div>
+            
+            <div class="form-actions">
+                <a href="/team/<%= team.id %>" class="btn-secondary">Cancel</a>
+                <button type="submit" class="btn-primary">Save Changes</button>
+            </div>
+        </form>
+    </div>
+    
+    <%- include('partials/footer') %>
+</body>
+</html>

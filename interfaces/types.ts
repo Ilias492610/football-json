@@ -6,6 +6,18 @@ export interface Team {
     stadium: string;
     manager: string;
     country: string;
+    imageUrl: string;
+}
+
+export enum UserRole {
+    ADMIN = 'ADMIN',
+    USER = 'USER'
+}
+
+export interface User {
+    username: string;
+    password: string;
+    role: UserRole;
 }
 
 export interface PlayerTeam {

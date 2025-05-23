@@ -6,7 +6,8 @@
       "foundedYear": 2018,
       "stadium": "DRV PNK Stadium",
       "manager": "Gerardo Martino",
-      "country": "United States"
+      "country": "United States",
+      "imageUrl": "Inter_Miami_CF_logo.svg.png"
     },
     {
       "id": "TEAM-002",
@@ -15,7 +16,8 @@
       "foundedYear": 1892,
       "stadium": "Anfield",
       "manager": "Jürgen Klopp",
-      "country": "England"
+      "country": "England",
+      "imageUrl": "Liverpool_FC.svg.webp"
     },
     {
       "id": "TEAM-003",
@@ -24,7 +26,8 @@
       "foundedYear": 1970,
       "stadium": "Parc des Princes",
       "manager": "Luis Enrique",
-      "country": "France"
+      "country": "France",
+      "imageUrl": "Paris_Saint-Germain_F.C..svg.png"
     },
     {
       "id": "TEAM-004",
@@ -33,7 +36,8 @@
       "foundedYear": 1955,
       "stadium": "Mrsool Park",
       "manager": "Luís Castro",
-      "country": "Saudi Arabia"
+      "country": "Saudi Arabia",
+      "imageUrl": "Nassr_FC_Logo.svg.png"
     },
     {
       "id": "TEAM-005",
@@ -42,7 +46,8 @@
       "foundedYear": 1957,
       "stadium": "King Fahd International Stadium",
       "manager": "Jorge Jesus",
-      "country": "Saudi Arabia"
+      "country": "Saudi Arabia",
+      "imageUrl": "Al_Hilal_SFC_Logo.svg.png"
     },
     {
       "id": "TEAM-006",
@@ -51,7 +56,8 @@
       "foundedYear": 1880,
       "stadium": "Etihad Stadium",
       "manager": "Pep Guardiola",
-      "country": "England"
+      "country": "England",
+      "imageUrl": "Manchester_City_FC_badge.svg.png"
     },
     {
       "id": "TEAM-007",
@@ -60,7 +66,8 @@
       "foundedYear": 1899,
       "stadium": "Camp Nou",
       "manager": "Xavi Hernández",
-      "country": "Spain"
+      "country": "Spain",
+      "imageUrl": "FC_Barcelona_(crest).svg.webp"
     },
     {
       "id": "TEAM-008",
@@ -69,6 +76,7 @@
       "foundedYear": 1902,
       "stadium": "Santiago Bernabéu",
       "manager": "Carlo Ancelotti",
-      "country": "Spain"
+      "country": "Spain",
+      "imageUrl": "Real_Madrid_CF.svg.webp"
     }
   ]

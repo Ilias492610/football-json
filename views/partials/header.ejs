@@ -1,11 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= typeof title !== 'undefined' ? title : 'Football Cards' %></title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-  <%- include('./nav') %>
-  <div class="container"> 
+<header class="navbar">
+    <div class="container">
+        <div class="navbar-brand">
+            <a href="/" class="navbar-logo">Football Cards</a>
+        </div>
+        <nav class="navbar-menu">
+            <a href="/players" class="navbar-item">Players</a>
+            <a href="/teams" class="navbar-item">Teams</a>
+            <% if (locals.isAuthenticated) { %>
+                <span class="navbar-item user-info">
+                    Welcome, <%= locals.username %> (<%= locals.role %>)
+                </span>
+                <a href="/logout" class="navbar-item logout-btn">Logout</a>
+            <% } else { %>
+                <a href="/login" class="navbar-item">Login</a>
+                <a href="/register" class="navbar-item">Register</a>
+            <% } %>
+        </nav>
+    </div>
+    <style>
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+        }
+        .user-info {
+            margin-right: 10px;
+            color: #333;
+        }
+        .logout-btn {
+            background-color: #f44336;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .logout-btn:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</header>

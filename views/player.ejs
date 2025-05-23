@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= player.name %> - Football Cards</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <style>
+        .player-detail {
+            display: flex;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin: 20px 0;
+        }
+        
+        .player-image {
+            flex: 0 0 300px;
+            margin-right: 30px;
+        }
+        
+        .player-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .player-info {
+            flex: 1;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .info-item {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .label {
+            font-weight: bold;
+            color: #555;
+            display: inline-block;
+            width: 100px;
+        }
+        
+        .value {
+            color: #333;
+        }
+        
+        .actions {
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .player-detail {
+                flex-direction: column;
+            }
+            
+            .player-image {
+                margin-right: 0;
+                margin-bottom: 20px;
+                flex: 0 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/header') %>
+    
+    <main class="container">
+        <div class="player-detail">
+            <div class="player-image">
+                <img src="/images/players<%= player.imageUrl %>" alt="<%= player.name %>" onerror="this.src='/images/default-player.jpg'">
+            </div>
+            
+            <div class="player-info">
+                <h1><%= player.name %></h1>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="label">Position:</span>
+                        <span class="value"><%= player.position %></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Team:</span>
+                        <span class="value"><%= player.currentTeam.name %></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Age:</span>
+                        <span class="value"><%= player.age %></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Nationality:</span>
+                        <span class="value"><%= player.nationality %></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Description:</span>
+                        <span class="value"><%= player.description %></span>
+                    </div>
+                    
+                    <% if (locals.isAuthenticated && locals.role === 'ADMIN') { %>
+                    <div class="admin-actions">
+                        <a href="/player/<%= player.id %>/edit" class="edit-button">Edit Player</a>
+                    </div>
+                    <% } %>
+                    <div class="info-item">
+                        <span class="label">Skills:</span>
+                        <span class="value"><%= player.skills.join(', ') %></span>
+                    </div>
+                </div>
+                
+                <div class="actions">
+                    <a href="/players" class="btn btn-secondary">Back to Players</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <%- include('partials/footer') %>
+</body>
+</html> 
